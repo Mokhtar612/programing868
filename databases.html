@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Databases - Programming Hub</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <meta name="description" content="Learn databases from scratch: SQL, NoSQL, MySQL, PostgreSQL, MongoDB and database design">
+    <meta name="keywords" content="databases, SQL, NoSQL, MySQL, PostgreSQL, MongoDB, learn programming, data management, database design">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://lh3.googleusercontent.com/gg-dl/AJfQ9KQ8HqmgeEIFLT99l7sfC6RCeen6viuTuvrCOvgnjgtL8PSWdl-7b_ZO4c66pn39wMkWXR3wFQrecxX49a9XeFnZl0ureYt9z6tuByByfW1OxN_1oWpXq-BB_LSu9z50XM2sCG-Bc64B9RF3IVKdaJtxcesFop1lYR_o97mmQfMCaAbO">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4808696262315159"
+     crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --secondary: #4D44DB;
+            --accent: #FF6584;
+            --dark: #2A2D3E;
+            --light: #F7F8FC;
+            --text: #2A2D3E;
+            --text-light: #6E7191;
+            --card-bg: #FFFFFF;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        [data-theme="dark"] {
+            --primary: #7D73FF;
+            --secondary: #5D54F0;
+            --accent: #FF7B95;
+            --dark: #F7F8FC;
+            --light: #2A2D3E;
+            --text: #F7F8FC;
+            --text-light: #A0A3BD;
+            --card-bg: #393C4E;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        header {
+            background-color: var(--light);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+        nav a {
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: var(--transition);
+            position: relative;
+        }
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        nav a:hover::after, nav a.active::after {
+            width: calc(100% - 30px);
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            color: var(--text);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+            color: var(--primary);
+        }
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        /* Page Hero */
+        .page-hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80') center/cover no-repeat;
+            color: white;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .breadcrumb a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+        .breadcrumb span {
+            color: white;
+        }
+        /* Types Section */
+        .types-section {
+            padding: 80px 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+        .section-subtitle {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        .type-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            height: 350px;
+        }
+        .type-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .type-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        .type-content {
+            position: relative;
+            z-index: 1;
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .type-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        .type-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .type-desc {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        .type-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--primary);
+            font-weight: 700;
+            transition: var(--transition);
+        }
+        .type-link:hover {
+            gap: 10px;
+        }
+        /* Skills Section */
+        .skills-section {
+            padding: 80px 0;
+            background-color: var(--card-bg);
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .skill-card {
+            background-color: var(--light);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .skill-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .skill-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: 0;
+        }
+        .cta-container {
+            position: relative;
+            z-index: 1;
+        }
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .btn-white {
+            background-color: white;
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn-white:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
+        }
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .footer-about {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition);
+        }
+        .social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        .footer-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        .footer-newsletter input {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 30px;
+            margin-bottom: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        .footer-newsletter input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .footer-newsletter button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+        .footer-newsletter button:hover {
+            background-color: var(--secondary);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        /* Responsive */
+        @media (max-width: 992px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            nav ul {
+                display: none;
+            }
+            .mobile-menu {
+                display: block;
+            }
+        }
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            .types-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 576px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-text">Programming Hub</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./">Home</a></li>
+                    <li><a href="#types" class="active">Databases</a></li>
+                    <li><a href="./#courses">Courses</a></li>
+                    <li><a href="./#about">About Us</a></li>
+                    <li><a href="./#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="./">Home</a>
+                <span>/</span>
+                <a href="./#categories">Categories</a>
+                <span>/</span>
+                <span>Databases</span>
+            </div>
+            <h1>Databases</h1>
+            <p>Learn database management and design from scratch to professional level. Our courses cover SQL, NoSQL, and the most popular database management systems.</p>
+            <a href="#types" class="btn btn-white">
+                <i class="fas fa-database"></i> Start Learning
+            </a>
+        </div>
+    </section>
+
+    <!-- Types Section -->
+    <section class="types-section" id="types">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Database Types</h2>
+                <p class="section-subtitle">Choose the type that fits your project and start your journey in data management</p>
+            </div>
+            <div class="types-grid">
+                <!-- SQL -->
+                <a href="#sql" class="type-card">
+                    <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" class="type-bg">
+                    <div class="type-content">
+                        <i class="fas fa-database type-icon"></i>
+                        <div>
+                            <h3 class="type-title">Relational Databases (SQL)</h3>
+                            <p class="type-desc">Learn SQL and design relational databases using MySQL, PostgreSQL, and SQL Server.</p>
+                            <span class="type-link">
+                                Learn SQL <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- NoSQL -->
+                <a href="#nosql" class="type-card">
+                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="type-bg">
+                    <div class="type-content">
+                        <i class="fas fa-project-diagram type-icon"></i>
+                        <div>
+                            <h3 class="type-title">Non-Relational Databases (NoSQL)</h3>
+                            <p class="type-desc">Learn flexible databases like MongoDB, Redis, and Firebase for modern web applications.</p>
+                            <span class="type-link">
+                                Learn NoSQL <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Cloud Databases -->
+                <a href="#cloud" class="type-card">
+                    <img src="https://images.unsplash.com/photo-1635393620901-5757be30819a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="type-bg">
+                    <div class="type-content">
+                        <i class="fas fa-cloud type-icon"></i>
+                        <div>
+                            <h3 class="type-title">Cloud Databases</h3>
+                            <p class="type-desc">Learn to use managed databases from AWS, Google Cloud, and Azure for your applications.</p>
+                            <span class="type-link">
+                                Learn Cloud <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Essential Skills</h2>
+                <p class="section-subtitle">These are the most important technologies and tools that every developer or database engineer should master</p>
+            </div>
+            <div class="skills-grid">
+                <!-- SQL -->
+                <div class="skill-card">
+                    <i class="fas fa-database skill-icon"></i>
+                    <h3 class="skill-title">SQL</h3>
+                    <p class="skill-desc">The fundamental query language for retrieving and modifying data in relational databases.</p>
+                </div>
+                <!-- MySQL -->
+                <div class="skill-card">
+                    <i class="fas fa-server skill-icon"></i>
+                    <h3 class="skill-title">MySQL</h3>
+                    <p class="skill-desc">One of the most popular open-source relational database management systems.</p>
+                </div>
+                <!-- PostgreSQL -->
+                <div class="skill-card">
+                    <i class="fas fa-rocket skill-icon"></i>
+                    <h3 class="skill-title">PostgreSQL</h3>
+                    <p class="skill-desc">A powerful open-source system known for reliability, high performance, and standards compliance.</p>
+                </div>
+                <!-- MongoDB -->
+                <div class="skill-card">
+                    <i class="fas fa-leaf skill-icon"></i>
+                    <h3 class="skill-title">MongoDB</h3>
+                    <p class="skill-desc">A flexible and easily scalable NoSQL database, ideal for modern web applications.</p>
+                </div>
+                <!-- Database Design -->
+                <div class="skill-card">
+                    <i class="fas fa-project-diagram skill-icon"></i>
+                    <h3 class="skill-title">Database Design</h3>
+                    <p class="skill-desc">Skills in designing structures, tables, and data relationships to ensure efficiency.</p>
+                </div>
+                <!-- Normalization -->
+                <div class="skill-card">
+                    <i class="fas fa-sitemap skill-icon"></i>
+                    <h3 class="skill-title">Normalization</h3>
+                    <p class="skill-desc">The process of organizing data to reduce redundancy and improve data integrity.</p>
+                </div>
+                <!-- Indexing -->
+                <div class="skill-card">
+                    <i class="fas fa-search skill-icon"></i>
+                    <h3 class="skill-title">Indexing</h3>
+                    <p class="skill-desc">Improving query performance by creating indexes on appropriate columns.</p>
+                </div>
+                <!-- Backup & Recovery -->
+                <div class="skill-card">
+                    <i class="fas fa-save skill-icon"></i>
+                    <h3 class="skill-title">Backup & Recovery</h3>
+                    <p class="skill-desc">Strategies to protect data from loss or corruption.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container cta-container">
+            <h2 class="cta-title">Ready to Master Databases?</h2>
+            <p class="cta-subtitle">Don't wait any longer, start your journey today and learn the essential skills every web or application developer needs.</p>
+            <a href="#types" class="btn btn-white">
+                <i class="fas fa-rocket"></i> Get Started Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 class="footer-logo">Programming Hub</h3>
+                    <p class="footer-about">An educational platform dedicated to providing the best Arabic content for learning programming, web development, and games with modern, interactive methods.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="./">Home</a></li>
+                        <li><a href="./#categories">Categories</a></li>
+                        <li><a href="./#courses">Courses</a></li>
+                        <li><a href="./#about">About Us</a></li>
+                        <li><a href="./#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="programming-languages.html">Programming Languages</a></li>
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="game-development.html">Game Development</a></li>
+                        <li><a href="databases.html">Databases</a></li>
+                        <li><a href="mobile-development.html">Mobile Development</a></li>
+                        <li><a href="privacy-policy.html">privacy-policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <div class="footer-newsletter">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit">Subscribe Now</button>
+                    </div>
+                    <p>Subscribe to receive updates about new courses and educational content</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Programming Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            if (document.body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('theme', 'light');
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-theme');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+        const nav = document.querySelector('nav ul');
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 992) {
+                    nav.style.display = 'none';
+                }
+            });
+        });
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.type-card, .skill-card');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        // Set initial state for animated elements
+        document.querySelectorAll('.type-card, .skill-card').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+        // Run animation on load and scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>

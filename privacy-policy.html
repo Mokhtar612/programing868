@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Programming</title>
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <meta name="description" content="Privacy Policy for Programming website - Learn how we collect, use, and protect your personal information">
+    <meta name="keywords" content="privacy policy, terms of use, data policy, Programming, learn programming">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://lh3.googleusercontent.com/gg-dl/AJfQ9KQ8HqmgeEIFLT99l7sfC6RCeen6viuTuvrCOvgnjgtL8PSWdl-7b_ZO4c66pn39wMkWXR3wFQrecxX49a9XeFnZl0ureYt9z6tuByByfW1OxN_1oWpXq-BB_LSu9z50XM2sCG-Bc64B9RF3IVKdaJtxcesFop1lYR_o97mmQfMCaAbO">
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --secondary: #4D44DB;
+            --accent: #FF6584;
+            --dark: #2A2D3E;
+            --light: #F7F8FC;
+            --text: #2A2D3E;
+            --text-light: #6E7191;
+            --card-bg: #FFFFFF;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        [data-theme="dark"] {
+            --primary: #7D73FF;
+            --secondary: #5D54F0;
+            --accent: #FF7B95;
+            --dark: #F7F8FC;
+            --light: #2A2D3E;
+            --text: #F7F8FC;
+            --text-light: #A0A3BD;
+            --card-bg: #393C4E;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        header {
+            background-color: var(--light);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+        nav a {
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: var(--transition);
+            position: relative;
+        }
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        nav a:hover::after, nav a.active::after {
+            width: calc(100% - 30px);
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            color: var(--text);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+            color: var(--primary);
+        }
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        /* Page Hero */
+        .page-hero {
+            padding: 150px 0 60px;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        .page-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-light);
+        }
+        /* Content Section */
+        .content-section {
+            padding: 60px 0;
+        }
+        .policy-container {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        .policy-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary);
+            color: var(--text);
+        }
+        .policy-subtitle {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 30px 0 20px;
+            color: var(--text);
+        }
+        .policy-content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .policy-content ul {
+            margin: 20px 0 30px 30px;
+        }
+        .policy-content li {
+            margin-bottom: 10px;
+        }
+        /* Last Updated */
+        .last-updated {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--text-light);
+            color: var(--text-light);
+            font-style: italic;
+        }
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: 0;
+        }
+        .cta-container {
+            position: relative;
+            z-index: 1;
+        }
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .btn-white {
+            background-color: white;
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn-white:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
+        }
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .footer-about {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition);
+        }
+        .social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        .footer-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+        .footer-newsletter input {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 30px;
+            margin-bottom: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        .footer-newsletter input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .footer-newsletter button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+        .footer-newsletter button:hover {
+            background-color: var(--secondary);
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        /* Responsive */
+        @media (max-width: 992px) {
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            nav ul {
+                display: none;
+            }
+            .mobile-menu {
+                display: block;
+            }
+        }
+        @media (max-width: 768px) {
+            .policy-container {
+                padding: 30px 20px;
+            }
+        }
+        @media (max-width: 576px) {
+            .page-hero h1 {
+                font-size: 2rem;
+            }
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-text">Programming</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./">Home</a></li>
+                    <li><a href="./#categories">Fields</a></li>
+                    <li><a href="./#courses">Courses</a></li>
+                    <li><a href="./privacy-policy.html" class="active">Privacy</a></li>
+                    <li><a href="./#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>We are committed to protecting your privacy and personal data. Learn how we collect, use, and protect your information.</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <div class="policy-container">
+                <h2 class="policy-title">Privacy Policy for Programming Website</h2>
+                
+                <p>Last Updated: January 1, 2024</p>
+                
+                <p>Welcome to Programming ("we", "us", "our website"). We are committed to protecting your privacy and ensuring the security of your personal information. This policy explains how we collect, use, and protect your information when you use our website.</p>
+                
+                <h3 class="policy-subtitle">1. Information We Collect</h3>
+                <p>We may collect the following information from you:</p>
+                <ul>
+                    <li><strong>Information you voluntarily provide to us:</strong> Such as your name and email address when subscribing to our newsletter or contacting us.</li>
+                    <li><strong>Usage information:</strong> Such as the pages of the website you visit, time spent on the website, and type of browser you use.</li>
+                    <li><strong>Cookies:</strong> We use cookies to improve your experience on the website and analyze traffic.</li>
+                </ul>
+                
+                <h3 class="policy-subtitle">2. How We Use Information</h3>
+                <p>We use the information we collect for the following purposes:</p>
+                <ul>
+                    <li>To provide and improve our services and educational content.</li>
+                    <li>To send newsletters and updates (if you subscribed).</li>
+                    <li>To analyze website usage and improve user experience.</li>
+                    <li>To respond to your inquiries and requests.</li>
+                </ul>
+                
+                <h3 class="policy-subtitle">3. Information Sharing</h3>
+                <p>We do not sell, rent, or share your personal information with third parties for marketing purposes. We may share your information only in the following cases:</p>
+                <ul>
+                    <li>With service providers working on our behalf (such as analytics services).</li>
+                    <li>When required by law or to protect our rights and the safety of our users.</li>
+                    <li>In case of merger, sale, or reorganization of our business (with notification to you).</li>
+                </ul>
+                
+                <h3 class="policy-subtitle">4. Information Protection</h3>
+                <p>We take reasonable security measures to protect your information from unauthorized access, alteration, disclosure, or destruction. However, absolute security of any online system cannot be guaranteed.</p>
+                
+                <h3 class="policy-subtitle">5. Cookies</h3>
+                <p>We use cookies to improve your experience on the website. You can adjust your browser to refuse all cookies or to inform you when a cookie is being sent. However, some parts of the website may not function properly if you disable cookies.</p>
+                
+                <h3 class="policy-subtitle">6. Links to Other Websites</h3>
+                <p>Our website may contain links to external sites. We are not responsible for the privacy practices or content of these websites. We encourage you to review the privacy policies of any website you visit.</p>
+                
+                <h3 class="policy-subtitle">7. Changes to Privacy Policy</h3>
+                <p>We may update this privacy policy from time to time. We will post any changes on this page with an updated "Last Updated" date. We encourage you to periodically review this policy for any changes.</p>
+                
+                <h3 class="policy-subtitle">8. Contact Us</h3>
+                <p>If you have any questions or concerns about this privacy policy, please contact us via email or through the contact form on our website.</p>
+                
+                <div class="last-updated">
+                    Last update of this policy: January 1, 2024
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container cta-container">
+            <h2 class="cta-title">Have Other Questions?</h2>
+            <p class="cta-subtitle">Feel free to contact us for any additional information or clarifications about the privacy policy or any other inquiry.</p>
+            <a href="#contact" class="btn btn-white">
+                <i class="fas fa-envelope"></i> Contact Us
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 class="footer-logo">Programming</h3>
+                    <p class="footer-about">An educational platform aiming to provide the best Arabic content for learning programming, web development, and games with modern and interactive methods.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="./">Home</a></li>
+                        <li><a href="./#categories">Fields</a></li>
+                        <li><a href="./#courses">Courses</a></li>
+                        <li><a href="./privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Fields</h3>
+                    <ul class="footer-links">
+                        <li><a href="langs.html">Programming Languages</a></li>
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="game-development.html">Game Development</a></li>
+                        <li><a href="databases.html">Databases</a></li>
+                        <li><a href="AI.html">Artificial Intelligence</a></li>
+                        <li><a href="privacy-policy.html">privacy-policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Newsletter</h3>
+                    <div class="footer-newsletter">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit">Subscribe Now</button>
+                    </div>
+                    <p>Subscribe to receive all updates about courses and educational lessons</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Programming. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        // Check for saved theme preference or respect OS preference
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (savedTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const nav = document.querySelector('nav ul');
+        
+        mobileMenu.addEventListener('click', () => {
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 992) {
+                        nav.style.display = 'none';
+                    }
+                }
+            });
+        });
+        
+        // Add active class to navigation links based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

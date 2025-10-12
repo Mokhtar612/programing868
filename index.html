@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta name="google-site-verification" content="Q3OGy_MzvofQOi9RN4nY5kbdFKeWQ0iyFDmMAQ3uO5U" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming - Learn Programming Professionally</title>
+    <meta name="description" content="Programming - Learn programming, web development, game development, and more with professional Arabic content">
+    <meta name="keywords" content="learn programming, web development, game development, programming courses, coding">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://lh3.googleusercontent.com/gg-dl/AJfQ9KQ8HqmgeEIFLT99l7sfC6RCeen6viuTuvrCOvgnjgtL8PSWdl-7b_ZO4c66pn39wMkWXR3wFQrecxX49a9XeFnZl0ureYt9z6tuByByfW1OxN_1oWpXq-BB_LSu9z50XM2sCG-Bc64B9RF3IVKdaJtxcesFop1lYR_o97mmQfMCaAbO">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4808696262315159"
+     crossorigin="anonymous"></script>
+  
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --secondary: #4D44DB;
+            --accent: #FF6584;
+            --dark: #2A2D3E;
+            --light: #F7F8FC;
+            --text: #2A2D3E;
+            --text-light: #6E7191;
+            --card-bg: #FFFFFF;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        [data-theme="dark"] {
+            --primary: #7D73FF;
+            --secondary: #5D54F0;
+            --accent: #FF7B95;
+            --dark: #F7F8FC;
+            --light: #2A2D3E;
+            --text: #F7F8FC;
+            --text-light: #A0A3BD;
+            --card-bg: #393C4E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--light);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--text);
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15px;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after, nav a.active::after {
+            width: calc(100% - 30px);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            color: var(--text);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+            color: var(--primary);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(108, 99, 255, 0.1) 0%, rgba(108, 99, 255, 0) 70%);
+            z-index: -1;
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-content {
+            flex: 1;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(108, 99, 255, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .hero-main-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            transform: perspective(1000px) rotateY(10deg);
+            transition: var(--transition);
+        }
+
+        .hero-main-image:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .floating-element {
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element:nth-child(1) {
+            top: -50px;
+            left: -30px;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            bottom: 50px;
+            right: -50px;
+            animation-delay: 1s;
+        }
+
+        .floating-element:nth-child(3) {
+            top: 100px;
+            right: -20px;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Categories Section */
+        .categories {
+            padding: 100px 0;
+            background-color: var(--card-bg);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background-color: var(--light);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            height: 250px;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .category-content {
+            position: relative;
+            z-index: 1;
+            padding: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .category-desc {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .category-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--primary);
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .category-link:hover {
+            gap: 10px;
+        }
+
+        /* Featured Courses */
+        .featured {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .course-info {
+            padding: 20px;
+        }
+
+        .course-category {
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: rgba(108, 99, 255, 0.1);
+            color: var(--primary);
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .course-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .course-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .course-link:hover {
+            background-color: var(--secondary);
+            gap: 10px;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: 0;
+        }
+
+        .cta-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .btn-white {
+            background-color: white;
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-white:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-about {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-newsletter input {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 30px;
+            margin-bottom: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .footer-newsletter input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-newsletter button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+
+        .footer-newsletter button:hover {
+            background-color: var(--secondary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-container {
+                flex-direction: column;
+            }
+            
+            .hero-content, .hero-image {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .hero-buttons, .hero-stats {
+                justify-content: center;
+            }
+            
+            .hero-image {
+                margin-top: 50px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-stats {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-text">Programming</span>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#categories">Fields</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="theme-toggle" id="darkModeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Start Your Programming Journey Today</h1>
+                <p class="hero-subtitle">Programming website offers you the best Arabic courses to learn programming, web development, and game development with interactive and easy methods</p>
+                
+                <div class="hero-buttons">
+                    <a href="#categories" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Start Learning
+                    </a>
+                    <a href="#courses" class="btn btn-outline">
+                        <i class="fas fa-book-open"></i> Browse Courses
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">+500</span>
+                        <span class="stat-label">Lessons</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">+50</span>
+                        <span class="stat-label">Practical Projects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Arabic Content</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Programming" class="hero-main-image">
+                
+                <div class="floating-element">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" width="60" alt="Python">
+                </div>
+                <div class="floating-element">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" width="60" alt="JavaScript">
+                </div>
+                <div class="floating-element">
+                    <img src="https://cdn-icons-png.flaticon.com/512/6132/6132221.png" width="60" alt="C++">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explore Programming Fields</h2>
+                <p class="section-subtitle">Choose your favorite field and start your learning journey with the best Arabic trainers</p>
+            </div>
+            
+            <div class="categories-grid">
+                <!-- Programming Languages -->
+                <a href="langs.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" class="category-bg">
+                    <div class="category-content">
+                        <i class="fas fa-code category-icon"></i>
+                        <div>
+                            <h3 class="category-title">Programming Languages</h3>
+                            <p class="category-desc">Learn programming basics and popular languages like Python, JavaScript, and Java</p>
+                            <span class="category-link">
+                                Start Now <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Web Development -->
+                <a href="web-development.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" class="category-bg">
+                    <div class="category-content">
+                        <i class="fas fa-globe category-icon"></i>
+                        <div>
+                            <h3 class="category-title">Web Development</h3>
+                            <p class="category-desc">Learn to build websites and web applications using HTML, CSS, JavaScript</p>
+                            <span class="category-link">
+                                Start Now <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Game Development -->
+                <a href="game-development.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="category-bg">
+                    <div class="category-content">
+                        <i class="fas fa-gamepad category-icon"></i>
+                        <div>
+                            <h3 class="category-title">Game Development</h3>
+                            <p class="category-desc">Learn to build games using Unity, Godot and popular game engines</p>
+                            <span class="category-link">
+                                Start Now <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Databases -->
+                <a href="databases.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" class="category-bg">
+                    <div class="category-content">
+                        <i class="fas fa-database category-icon"></i>
+                        <div>
+                            <h3 class="category-title">Databases</h3>
+                            <p class="category-desc">Learn to manage and design databases using SQL and NoSQL</p>
+                            <span class="category-link">
+                                Start Now <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Artificial Intelligence -->
+                <a href="AI.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1677442135136-760c813a743e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" class="category-bg">
+                    <div class="category-content">
+                        <i class="fas fa-robot category-icon"></i>
+                        <div>
+                            <h3 class="category-title">Artificial Intelligence</h3>
+                            <p class="category-desc">Learn the basics of artificial intelligence and machine learning using Python</p>
+                            <span class="category-link">
+                                Start Now <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Mobile Development -->
+                <a href="mobile-development.html" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1607252650355-f7fd0460ccdb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" class="category-bg">
+                    <div class="category-content">
+                        <i class="fas fa-mobile-alt category-icon"></i>
+                        <div>
+                            <h3 class="category-title">Mobile Development</h3>
+                            <p class="category-desc">Learn to build Android and iOS applications using Flutter and React Native</p>
+                            <span class="category-link">
+                                Start Now <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="featured" id="courses">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Latest Educational Courses</h2>
+                <p class="section-subtitle">Learn from the best free Arabic courses</p>
+            </div>
+            
+            <div class="courses-grid">
+                <!-- Python -->
+                <div class="course-card">
+                    <img src="https://img.youtube.com/vi/Y8Tko2YC5hA/maxresdefault.jpg" class="course-image">
+                    <div class="course-info">
+                        <span class="course-category">Python</span>
+                        <h3 class="course-title">Learn Python from Scratch for Beginners</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-video"></i> 30 Lessons</span>
+                            <span><i class="fas fa-clock"></i> 8 Hours</span>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=Y8Tko2YC5hA" class="course-link" target="_blank">
+                            Watch Course <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- JavaScript -->
+                <div class="course-card">
+                    <img src="https://img.youtube.com/vi/PkZNo7MFNFg/maxresdefault.jpg" class="course-image">
+                    <div class="course-info">
+                        <span class="course-category">JavaScript</span>
+                        <h3 class="course-title">JavaScript Basics in One Hour</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-video"></i> 15 Lessons</span>
+                            <span><i class="fas fa-clock"></i> 5 Hours</span>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=PkZNo7MFNFg" class="course-link" target="_blank">
+                            Watch Course <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- HTML & CSS -->
+                <div class="course-card">
+                    <img src="https://img.youtube.com/vi/qz0aGYrrlhU/maxresdefault.jpg" class="course-image">
+                    <div class="course-info">
+                        <span class="course-category">Web Development</span>
+                        <h3 class="course-title">HTML5 and CSS3 for Beginners</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-video"></i> 25 Lessons</span>
+                            <span><i class="fas fa-clock"></i> 6 Hours</span>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=qz0aGYrrlhU" class="course-link" target="_blank">
+                            Watch Course <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Unity -->
+                <div class="course-card">
+                    <img src="https://img.youtube.com/vi/gB1F9G0JXOo/maxresdefault.jpg" class="course-image">
+                    <div class="course-info">
+                        <span class="course-category">Game Development</span>
+                        <h3 class="course-title">Unity 2D Basics</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-video"></i> 20 Lessons</span>
+                            <span><i class="fas fa-clock"></i> 7 Hours</span>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=gB1F9G0JXOo" class="course-link" target="_blank">
+                            Watch Course <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- SQL -->
+                <div class="course-card">
+                    <img src="https://img.youtube.com/vi/HXV3zeQKqGY/maxresdefault.jpg" class="course-image">
+                    <div class="course-info">
+                        <span class="course-category">Databases</span>
+                        <h3 class="course-title">SQL for Beginners</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-video"></i> 18 Lessons</span>
+                            <span><i class="fas fa-clock"></i> 4 Hours</span>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=HXV3zeQKqGY" class="course-link" target="_blank">
+                            Watch Course <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Flutter -->
+                <div class="course-card">
+                    <img src="https://img.youtube.com/vi/1ukSR1GRtMU/maxresdefault.jpg" class="course-image">
+                    <div class="course-info">
+                        <span class="course-category">Mobile Development</span>
+                        <h3 class="course-title">Learn Flutter from Scratch</h3>
+                        <div class="course-meta">
+                            <span><i class="fas fa-video"></i> 35 Lessons</span>
+                            <span><i class="fas fa-clock"></i> 10 Hours</span>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=1ukSR1GRtMU" class="course-link" target="_blank">
+                            Watch Course <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container cta-container">
+            <h2 class="cta-title">Ready to Start Your Programming Journey?</h2>
+            <p class="cta-subtitle">Join thousands of students who have started their programming journey with us and acquired the skills needed for the job market</p>
+            <a href="#categories" class="btn btn-white">
+                <i class="fas fa-rocket"></i> Start Learning Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3 class="footer-logo">Programming</h3>
+                    <p class="footer-about">The first Arabic platform to learn programming with professional and free content for all levels</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#categories">Fields</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Programming Fields</h4>
+                    <ul class="footer-links">
+                        <li><a href="langs.html">Programming Languages</a></li>
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="game-development.html">Game Development</a></li>
+                        <li><a href="databases.html">Databases</a></li>
+                        <li><a href="AI.html">Artificial Intelligence</a></li>
+                        <li><a href="privacy-policy.html">privacy-policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Newsletter</h4>
+                    <div class="footer-newsletter">
+                        <p>Subscribe to our newsletter to receive the latest courses and educational content</p>
+                        <input type="email" placeholder="Your Email">
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Programming. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        // Check for saved theme preference or respect OS preference
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        if (savedTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+        
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const nav = document.querySelector('nav ul');
+        
+        mobileMenu.addEventListener('click', () => {
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 992) {
+                        nav.style.display = 'none';
+                    }
+                }
+            });
+        });
+        
+        // Add active class to navigation links based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
